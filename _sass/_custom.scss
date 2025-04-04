@@ -1,0 +1,98 @@
+// .aboutpage-container {
+//     background-color: #f2f2f2; /* 淡灰色 */
+//     padding: 2rem;
+//     border-radius: 1rem; /* 可选圆角 */
+//   }
+//TOCHECK只有post部分是灰色
+// .post {
+//     background-color: #f7f7f7; /* 淡淡的灰色 */
+//     border-radius: 1rem; /* 可选，增加圆角 */
+//     padding: 2rem; /* 增加内部空间感 */
+//     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 可选，增加阴影效果 */
+// }
+
+//TOCHECK
+body {
+    background-color: #f2f2f2 !important; // 整个淡灰色背景
+}
+  
+.navbar {
+    background-color: #ffffff !important; // 强制导航栏保持白色，避免受body背景影响
+}
+
+.biography-container {
+    padding-top: 6.5rem;
+    padding-bottom: 1rem;
+  
+    .post-title {
+      font-size: 6rem;
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 4rem;
+  
+      .font-weight-bold {
+        font-weight: inherit;
+      }
+    }
+  
+    .desc {
+      color: #222;
+    }
+    .desc p {
+        font-size: 2.4rem ; //自定义页面字体
+        margin-bottom: 5px; /* 你想要的垂直间距 */
+    }
+}
+
+.biography-container {
+    .research-interests {
+        font-weight: 500 !important;
+        font-size: 2.4rem;
+        margin-top: 140px !important; 
+        line-height: 1.6;
+    }
+    .personal-interests {
+        font-size: 2.4rem;
+        //TOCHEK: if padding with above text
+        // margin-top: 150px !important; 
+    }
+}
+
+// 图片距离顶部padding
+.profile {
+    padding-top: 1.6rem; 
+}
+
+// navbar logo
+.navbar-brand.title {
+    display: flex;
+    align-items: center;
+    font-size: 2.6rem; // 控制名字大小
+    font-weight: 300;
+  
+    .site-logo {
+      height: 40px; // 控制 logo 大小
+      width: auto;
+      margin-right: 0.8rem; // logo 和名字之间的间距
+    }
+  
+    .site-name-container {
+        display: flex;
+        flex-direction: column; // 让名字竖着排列
+        justify-content: center;
+        line-height: 1.1;
+      }
+      
+    .site-name-line {
+        font-size: 2.4rem;
+        //font-weight: 700;
+        color: #000;
+        text-align: left;
+        text-transform: uppercase; // 👈 全部大写
+     }
+}
+
+
+.news {
+    font-size: 3rem !important; // 或 16px、18px，按你需要的大小改
+  }

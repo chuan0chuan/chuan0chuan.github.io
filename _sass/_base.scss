@@ -248,6 +248,9 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.95;
+  font-size: 2.8rem;
+  padding-top: 2.2rem;    
+  padding-bottom: 2.2rem; 
 }
 
 .navbar .dropdown-menu {
@@ -274,6 +277,14 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-hover-color);
     background-color: var(--global-bg-color);
   }
+}
+
+.navbar .container {
+  max-width: 100%;   // 或者设置更小更大，完全覆盖默认值
+  padding-left: 0;
+  padding-right: 50px !important; 
+  display: flex;
+  justify-content: flex-end; // 把 navbar 内容靠右
 }
 
 .navbar.navbar-light {
@@ -398,6 +409,51 @@ ul.task-list input[type="checkbox"] {
 // Social (bottom)
 
 .social {
+  &.horizontal {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f9f9f9;
+    padding: 3rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+    .contact-icons {
+      display: flex !important;;
+      flex-wrap: wrap !important;;
+      justify-content: center;
+      gap: 17rem !important;;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        font-size: 2.7rem;
+        color: var(--global-text-color);
+        text-decoration: none;
+
+        i {
+          font-size: 3rem;
+        }
+
+        span {
+          font-size: 3rem;
+        }
+
+        &:hover {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
+
+  // 这是默认 `.social` 样式（比如你用在页脚）
   text-align: center;
 
   .contact-icons {
@@ -414,21 +470,14 @@ ul.task-list input[type="checkbox"] {
         width: 3.5rem;
         height: 4rem;
         margin-bottom: 0.5rem;
-
-        image {
-          width: 3.5rem;
-          height: 3.5rem;
-        }
       }
 
       i::before {
         color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
 
       &:hover {
-        text-decoration: none;
-
         i::before {
           color: var(--global-theme-color);
         }
@@ -440,6 +489,7 @@ ul.task-list input[type="checkbox"] {
     font-size: 0.8rem;
   }
 }
+
 
 .wechat-modal {
   display: none;
@@ -1110,7 +1160,7 @@ nav[data-toggle="toc"] {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
+ 
     &:hover {
       color: var(--global-theme-color);
 

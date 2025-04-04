@@ -1,20 +1,10 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
 
+<div class="post">
   <article>
+
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
@@ -22,15 +12,10 @@ layout: default
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+          {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true %}
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
@@ -38,7 +23,49 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="biography-container">
+      <h1 class="post-title">
+        {% if site.title == 'blank' %}
+          {{ site.first_name }}{{ site.middle_name }} {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <div class="desc">{{ page.subtitle }}</div>
+      <div class="research-interests">{{ page.research_interests }}</div>
+      <div class="personal-interests">{{ page.personal_interests }}</div>
+    </div>
+     {% if page.social %}
+        <!-- ✅ Full-width horizontal social bar with paired icons and labels -->
+        <div class="social horizontal">
+          <div class="contact-icons">
+            <div class="social-item">
+              <a href="https://scholar.google.com">
+                <i class="ai ai-google-scholar"></i><span>Google Scholar</span>
+              </a>
+            </div>
+            <div class="social-item">
+              <a href="https://github.com/yourname">
+                <i class="fab fa-github"></i><span>GitHub</span>
+              </a>
+            </div>
+            <div class="social-item">
+              <a href="https://twitter.com/yourhandle">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+            </div>
+            <div class="social-item">
+              <a href="https://facebook.com/yourprofile">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    <div class="biography-container">
+      <div class="clearfix">{{ content }}</div>
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
@@ -56,6 +83,8 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+   
+   
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
@@ -64,17 +93,18 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
+
+  
+   <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+  
   </article>
 </div>
