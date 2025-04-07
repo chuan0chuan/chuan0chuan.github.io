@@ -61,7 +61,7 @@ layout: default
   <article class="post-content">
     {% if page.toc and page.toc.beginning %}
       <div id="table-of-contents">
-         <!-- TOC placeholder (disabled in GitHub Pages build) -->
+        {% toc %}
       </div>
       <hr>
     {% endif %}
