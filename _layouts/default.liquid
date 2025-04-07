@@ -19,7 +19,55 @@
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
-
+    <!-- Hero Content -->
+    {% if page.url == '/'  or page.url == '/about/'%}
+      <!-- 🔥 全屏背景图 biography-container -->
+      <div class="biography-container" style="background-image: url('{{ "/assets/img/hero_pic.jpg" | relative_url }}');">
+        <h1 class="post-title" style="margin-top: 400px;">{{ site.title }}</h1>
+        <div class="social horizontal">
+          {% assign desired_order = "email,scholar_userid,github_username,linkedin_username,instagram_id" | split: "," %}
+          <div class="contact-icons">
+            {% for key in desired_order %}
+              {% assign value = site.data.socials[key] %}
+              {% if value %}
+                {% case key %}
+                  {% when 'email' %}
+                    <div class="social-item">
+                      <a href="mailto:{{ value | encode_email }}" title="Email">
+                        <i class="fas fa-envelope"></i>
+                      </a>
+                    </div>
+                  {% when 'scholar_userid' %}
+                    <div class="social-item">
+                      <a href="https://scholar.google.com/citations?user={{ value }}" title="Google Scholar">
+                        <i class="ai ai-google-scholar"></i><span>Google Scholar</span>
+                      </a>
+                    </div>
+                  {% when 'github_username' %}
+                    <div class="social-item">
+                      <a href="https://github.com/{{ value }}" title="GitHub">
+                        <i class="fab fa-github"></i><span>GitHub</span>
+                      </a>
+                    </div>
+                  {% when 'linkedin_username' %}
+                    <div class="social-item">
+                      <a href="https://www.linkedin.com/in/{{ value }}" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                      </a>
+                    </div>
+                  {% when 'instagram_id' %}
+                    <div class="social-item">
+                      <a href="https://instagram.com/{{ value }}" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                {% endcase %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
     <!-- Content -->
     <div class="container mt-5 aboutpage-container" role="main">
       {% if page.toc and page.toc.sidebar %}

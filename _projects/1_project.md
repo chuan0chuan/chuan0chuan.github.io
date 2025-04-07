@@ -1,11 +1,19 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: "Purrfessor: A Fine-tuned Multimodal LLaVA Diet Health Chatbot"
+description: |
+    - an innovative AI chatbot designed to provide personalized dietary guidance <br>
+    - use a human-in-the-loop framework to improve response quality and user engagement
+keyword: Human-Computer Interaction, LLMs, AWS
+img: assets/img/catbot.jpg
 importance: 1
 category: work
 related_publications: true
+buttons:
+    - name: Visit Site
+      url: https://purrfessorbot.netlify.app/
+marginTop: 3.2rem
+disabled: true
 ---
 
 Every project has a beautiful feature showcase page.

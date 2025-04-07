@@ -165,13 +165,78 @@ ul.task-list input[type="checkbox"] {
 }
 
 // Card
+.project-card {
+  background-color: var(--global-card-bg-color); 
+  .card-img {
+    width: 90% !important;
+    padding: 2rem;  
+  }
 
+  .card-body {
+    margin-left: -7rem;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem; // 三段之间统一间距
+  }
+  // Keyword / subtitle
+  .card-keyword {
+    font-style: italic;
+    font-size: 2.1rem;
+    color: var(--global-text-color);
+    margin: 0;
+  }
+
+  .card-title {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 2.7rem;
+    color: var(--global-text-color);
+    margin: 0;
+  }
+  .card-text {
+    color: var(--global-card-text-color) !important;
+    font-size: 2.1rem;
+    margin: 0;
+  }
+  .card-text br {
+    content: "";
+    display: block;
+    margin-bottom: 1.8rem; // 控制每一项之间的垂直间距
+  }
+
+  .button-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    a {
+      font-size: 2.1rem;
+      color: var(--global-card-text-color)!important;
+      background-color: transparent;
+      border: 1px solid var(--global-card-text-color)!important;
+      border-radius: 5px;
+      padding: 0.4rem 1rem;
+      text-transform: none; 
+
+      &:hover {
+        color: var(--global-theme-color) !important;
+        border-color: var(--global-theme-color) !important;
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Card
 .card {
   background-color: var(--global-card-bg-color);
 
   .card-img {
-    width: 100%;
-    padding-top: 1.25rem;
+    width: 90%;  
+    padding: 2rem;  
   }
 
   .card-title {
@@ -182,6 +247,7 @@ ul.task-list input[type="checkbox"] {
     padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   }
 }
+
 
 // Citation
 
@@ -412,7 +478,7 @@ ul.task-list input[type="checkbox"] {
   &.horizontal {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    background-color: #f9f9f9;
+    background-color: transparent!important;
     padding: 3rem 0 2rem;
     display: flex;
     justify-content: center;
@@ -435,19 +501,28 @@ ul.task-list input[type="checkbox"] {
         display: flex;
         align-items: center;
         font-size: 2.7rem;
-        color: var(--global-text-color);
+        // color: var(--global-text-color);
         text-decoration: none;
 
         i {
+          color: #ffffff !important; 
           font-size: 3rem;
         }
 
         span {
+          color: #ffffff !important; 
           font-size: 3rem;
         }
 
+        i::before {
+          color:  #ffffff !important;
+          transition: all 0.2s ease-in-out;
+        }
+  
         &:hover {
-          color: var(--global-theme-color);
+          i::before {
+            color: var(--global-theme-color);
+          }
         }
       }
     }
@@ -486,7 +561,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .contact-note {
-    font-size: 0.8rem;
+    font-size: 1.78rem;
   }
 }
 

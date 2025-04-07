@@ -1,11 +1,24 @@
 ---
 layout: page
-title: project 7
-description: with background image
-img: assets/img/4.jpg
+title: "Chato: AI Bot Creator for Businesses with Custom Knowledge Input"
+keyword: LLM, Generative AI, No-Code Customization, Bot Monetization
+description: |
+    - a platform for AI bot creation that lets clients upload materials to generate personalized assistants <br>
+    - allow creators to monetize by charging for interactions with their bots <br>
+    - flexible deployment via dedicated webpages, embeddable JS, and third-party app integration <br>
+    - includes a dashboard to track usage metrics and user satisfaction
+
+img: assets/img/chato1.png
 importance: 1
 category: work
 related_publications: true
+buttons:
+    - name: Visit Site
+      url: https://chato.cn/
+    - name: Source Code
+      url: https://github.com/itsharex/chato-fe
+marginTop: 0.5rem
+disabled: true
 ---
 
 Every project has a beautiful feature showcase page.

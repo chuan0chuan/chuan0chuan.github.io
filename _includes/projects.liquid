@@ -13,7 +13,9 @@
       {% endif %}
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
-        <p class="card-text">{{ project.description }}</p>
+        {% if include.show_description != false %}
+          <p class="card-text">{{ project.description }}</p>
+        {% endif %}
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}
             <div class="github-icon">

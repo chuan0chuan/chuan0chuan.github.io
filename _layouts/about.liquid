@@ -23,51 +23,47 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="biography-container">
+    <div class="aboutme-container"">
       <h1 class="post-title">
-        {% if site.title == 'blank' %}
-          {{ site.first_name }}{{ site.middle_name }} {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
+        About Me 
       </h1>
       <div class="desc">{{ page.subtitle }}</div>
       <div class="research-interests">{{ page.research_interests }}</div>
       <div class="personal-interests">{{ page.personal_interests }}</div>
     </div>
-     {% if page.social %}
-        <!-- ✅ Full-width horizontal social bar with paired icons and labels -->
-        <div class="social horizontal">
-          <div class="contact-icons">
-            <div class="social-item">
-              <a href="https://scholar.google.com">
-                <i class="ai ai-google-scholar"></i><span>Google Scholar</span>
-              </a>
-            </div>
-            <div class="social-item">
-              <a href="https://github.com/yourname">
-                <i class="fab fa-github"></i><span>GitHub</span>
-              </a>
-            </div>
-            <div class="social-item">
-              <a href="https://twitter.com/yourhandle">
-                <i class="fab fa-x-twitter"></i>
-              </a>
-            </div>
-            <div class="social-item">
-              <a href="https://facebook.com/yourprofile">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      {% endif %}
 
-    <div class="biography-container">
+    <div class="aboutme-container">
       <div class="clearfix">{{ content }}</div>
     </div>
 
+  {%- comment -%}
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+     <h2 class="recent-projects-heading">
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  {%- endcomment -%}
+
+  <!-- Projects section replacing selected publications -->
+  <h2 class="recent-projects-heading">
+    <a href="{{ '/projects/' | relative_url }}" style="color: inherit">Recent Projects</a>
+  </h2>
+
+  <div class="project-row">
+    {% assign featured_projects = site.projects | sort: "importance" | slice: 0, 2 %}
+    {% for project in featured_projects %}
+      {% include projects_horizontal.liquid project=project %}
+    {% endfor %}
+  </div>
+
     <!-- News -->
+    {%- comment -%}
     {% if page.announcements and page.announcements.enabled %}
       <h2>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
@@ -82,21 +78,7 @@ layout: default
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
-
-   
-   
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
-
+    {%- endcomment -%}
   
    <!-- Social -->
     {% if page.social %}

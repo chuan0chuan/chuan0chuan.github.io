@@ -13,49 +13,79 @@
 
 //TOCHECK
 body {
-    background-color: #f2f2f2 !important; // 整个淡灰色背景
+  background-color: var(--global-bg-color) !important;
 }
   
 .navbar {
-    background-color: #ffffff !important; // 强制导航栏保持白色，避免受body背景影响
+  background-color: var(--global-card-bg-color) !important;
 }
 
 .biography-container {
-    padding-top: 6.5rem;
-    padding-bottom: 1rem;
-  
+    background-image: url('/assets/img/prof_pic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--global-social-bar-bg-color);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    .social.horizontal {
+      margin-top: auto;
+    }
+
     .post-title {
       font-size: 6rem;
       font-weight: 900;
-      color: #222;
+      color: var(--global-social-bar-text-color);
       margin-bottom: 4rem;
   
       .font-weight-bold {
         font-weight: inherit;
       }
     }
-  
-    .desc {
-      color: #222;
-    }
-    .desc p {
-        font-size: 2.4rem ; //自定义页面字体
-        margin-bottom: 5px; /* 你想要的垂直间距 */
-    }
 }
 
-.biography-container {
+
+.aboutme-container {
+    font-size: 2.1rem;
+    line-height: 1.7;
+    // .desc {
+    //   color: #222;
+    // }
+    // .desc p {
+    //     font-size: 2.4rem ; //自定义页面字体
+    //     margin-bottom: 5px; /* 你想要的垂直间距 */
+    // }
+
+    .post-title {
+      font-size: 2.7rem !important;
+      font-weight: 300 !important;;
+      font-family: "Segoe UI", Arial, sans-serif!important;
+    }
+
     .research-interests {
-        font-weight: 500 !important;
-        font-size: 2.4rem;
-        margin-top: 140px !important; 
-        line-height: 1.6;
+        font-size: 2.1rem;
+        margin-top: 68px !important; 
+        line-height: 1.7;
+        font-weight: 400 !important;;
     }
     .personal-interests {
-        font-size: 2.4rem;
+        font-size: 2.1rem;
         //TOCHEK: if padding with above text
         // margin-top: 150px !important; 
     }
+
+    .clearfix {
+      font-size: 2.1rem;
+      margin-top: 30px !important; 
+      line-height: 1.7;
+  }
 }
 
 // 图片距离顶部padding
@@ -86,7 +116,7 @@ body {
     .site-name-line {
         font-size: 2.4rem;
         //font-weight: 700;
-        color: #000;
+        color: var(--global-text-color);
         text-align: left;
         text-transform: uppercase; // 👈 全部大写
      }
@@ -96,3 +126,34 @@ body {
 .news {
     font-size: 3rem !important; // 或 16px、18px，按你需要的大小改
   }
+
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+  
+.project-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 2rem; // 可选：上下间距
+}
+.project-title-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.recent-projects-heading {
+  font-size: 2.7rem;
+  padding-top: 6rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  font-weight: 300 !important;;
+}
