@@ -21,7 +21,7 @@ personal_interests:
 
 profile:
   align: right
-  image: main_pic2.jpg
+  image: main_pic2.JPG
   image_circular: false # crops the image to make it circular
   more_info: 
     # <p>555 your office number</p>
