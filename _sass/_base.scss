@@ -173,7 +173,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .card-body {
-    margin-left: -7rem;
+    margin-left: -5.9rem;
     padding: 1.25rem 1.25rem 1.25rem 1.25rem !important;
     display: flex;
     flex-direction: column;
@@ -190,7 +190,7 @@ ul.task-list input[type="checkbox"] {
   .card-title {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--global-text-color);
     margin: 0;
   }
@@ -212,7 +212,7 @@ ul.task-list input[type="checkbox"] {
     margin-top: 2rem;
 
     a {
-      font-size: 2.1rem;
+      font-size: 1.3rem;
       color: var(--global-card-text-color)!important;
       background-color: transparent;
       border: 1px solid var(--global-card-text-color)!important;
@@ -532,7 +532,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       img {
@@ -561,7 +561,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .contact-note {
-    font-size: 1.78rem;
+    font-size: 1rem;
   }
 }
 
