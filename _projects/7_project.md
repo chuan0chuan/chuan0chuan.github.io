@@ -17,7 +17,7 @@ buttons:
       url: https://chato.cn/
     - name: Source Code
       url: https://github.com/itsharex/chato-fe
-marginTop: 0.5rem
+marginTop: 0.2rem
 disabled: true
 ---
 

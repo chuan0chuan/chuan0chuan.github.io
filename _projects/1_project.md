@@ -12,7 +12,7 @@ related_publications: true
 buttons:
     - name: Visit Site
       url: https://purrfessorbot.netlify.app/
-marginTop: 3.2rem
+marginTop: 1.6rem
 disabled: true
 ---
 
