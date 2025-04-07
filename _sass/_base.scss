@@ -182,7 +182,7 @@ ul.task-list input[type="checkbox"] {
   // Keyword / subtitle
   .card-keyword {
     font-style: italic;
-    font-size: 2.1rem;
+    font-size: 1.3rem;
     color: var(--global-text-color);
     margin: 0;
   }
@@ -190,13 +190,13 @@ ul.task-list input[type="checkbox"] {
   .card-title {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 300;
-    font-size: 2.7rem;
+    font-size: 2rem;
     color: var(--global-text-color);
     margin: 0;
   }
   .card-text {
     color: var(--global-card-text-color) !important;
-    font-size: 2.1rem;
+    font-size: 1.3rem;
     margin: 0;
   }
   .card-text br {
@@ -479,7 +479,7 @@ ul.task-list input[type="checkbox"] {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     background-color: transparent!important;
-    padding: 3rem 0 2rem;
+    padding: 1.5rem 0 1.5rem;
     display: flex;
     justify-content: center;
     border-top: 1px solid #ccc;
@@ -489,7 +489,7 @@ ul.task-list input[type="checkbox"] {
       display: flex !important;;
       flex-wrap: wrap !important;;
       justify-content: center;
-      gap: 17rem !important;;
+      gap: 8rem !important;;
     }
 
     .social-item {
@@ -500,18 +500,18 @@ ul.task-list input[type="checkbox"] {
       a {
         display: flex;
         align-items: center;
-        font-size: 2.7rem;
+        font-size: 2rem;
         // color: var(--global-text-color);
         text-decoration: none;
 
         i {
           color: #ffffff !important; 
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         span {
           color: #ffffff !important; 
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         i::before {
